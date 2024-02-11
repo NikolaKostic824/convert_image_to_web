@@ -10,7 +10,7 @@ export const alertInvalidData = (data) => {
 export const createInvalidObject = (file) => {
   return { valid: false, name: file.name };
 };
-export const createImageObj = (file) => {
+export const createImageObj = (file, img, data) => {
   const validationResult = validateImage(file.name);
   const name = validationResult.isValid
     ? file.name.substring(0, file.name.lastIndexOf("."))
@@ -18,10 +18,12 @@ export const createImageObj = (file) => {
   return {
     isValid: validationResult.isValid,
     name: name,
-    dimensions: {},
+    dimensions: { width: img.width, height: img.height },
     size: file.size,
+    src: URL.createObjectURL(file),
     extension: file.name.split(".").pop(),
     type: validationResult.type,
+    data: data,
   };
 };
 

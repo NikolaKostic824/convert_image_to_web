@@ -1,4 +1,4 @@
-import { getImagesFromFileInput } from "./custom_modules/imagesModule.js";
+import { getImagesFromFileInput } from "./custom_modules/imageProcessingModule.js";
 import { setAllowedTypes } from "./custom_modules/settingsModule.js";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const images = await getImagesFromFileInput(
           Array.from(inputs.fileInput.files)
         );
-        console.log(images);
+        console.log("HERE", images);
       } catch (error) {
         console.error("Error handling Images file input change:", error);
       }
