@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/NikolaKostic824/convert_image_to_web/issues"
   },
-  "homepage": "https://github.com/NikolaKostic824/convert_image_to_web#readme"
+  "homepage": "https://github.com/NikolaKostic824/convert_image_to_web#readme",
+  "dependencies": {
+    "jszip": "^3.10.1"
+  }
 }

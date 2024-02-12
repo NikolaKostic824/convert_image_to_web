@@ -3,19 +3,61 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Convert Images for the Web Page</title>
+    <!-- Link to your CSS file -->
     <link rel="stylesheet" href="./styles/styles.css" />
   </head>
   <body>
+    <!-- Main container -->
     <div id="defaultContainer" class="container">
-      <h1>Convert Images for the web page</h1>
+      <!-- Heading -->
+      <h1>Convert Images for the Web Page</h1>
+      <!-- Explanation for image naming conventions -->
+      <p>
+        Saved images must be named "right", "left", "background", or "back" to
+        be recognized by the application.
+      </p>
+      <!-- Input fields for file and image URL -->
       <div class="inputs">
         <input type="file" id="imageInput" multiple accept="image/*" />
         <input type="text" id="imageUrlInput" placeholder="Enter image URL" />
       </div>
-      <button id="convertButton">Convert</button>
+      <!-- Radio buttons for selecting image type -->
+      <div id="radioContainer" class="radio-buttons">
+        <input
+          type="radio"
+          id="backgroundRadio"
+          name="imageType"
+          value="background"
+          checked
+        />
+        <label for="backgroundRadio">Background</label>
+        <input
+          type="radio"
+          id="leftRightRadio"
+          name="imageType"
+          value="left-right"
+        />
+        <label for="leftRightRadio">Left-Right</label>
+      </div>
+      <!-- Explanation for image dimensions and size -->
+      <p>
+        The application will generate images with a width of 1200px for
+        "left-right" and 1382px for "background". The maximum file size for
+        images is 250kb.
+      </p>
+      <!-- Button to initiate conversion -->
+      <button disabled="disabled" id="convertButton">Convert</button>
     </div>
-    <div class="loadingContainer"></div>
+
+    <!-- Include JSZip library for creating zip archives -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"
+      integrity="sha512-XMVd28F1oH/O71fzwBnV7HucLxVwtxf26XV8P4wPk26EDxuGZ91N8bsOttmnomcCD3CS5ZMRL50H0GgOHvegtg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- Link to your JavaScript file -->
     <script type="module" src="scripts/index.js"></script>
   </body>
 </html>
